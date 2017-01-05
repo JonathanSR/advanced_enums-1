@@ -11,15 +11,24 @@ class VendingMachine
 
   
   def add_snack(snack)
-    @inventory << snack
+    inventory << snack
   end
 
   def snacks_by_name
-    @inventory.map do |name|
-    @inventory[].name
+    inventory.map do |snack|
+    snack.name
+    end
   end
- 
-  
-  
+
+  def how_many_snacks
+    inventory.group_by do |snack|
+    snack.quantity
+    end
   end
+
+  def inventory_by_alphabet
+    inventory.sort_by do |snack|
+    snack
+  end
+
 end
